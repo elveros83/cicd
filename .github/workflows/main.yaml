@@ -24,5 +24,24 @@ jobs:
     - name: push
       run: docker push $GITHUB_ACTOR/app:$GITHUB_RUN_NUMBER
 
-    - name: change gitops config
-      run: echo "gitops"
+    - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+      with:
+        # The arguments for the `git add` command (see the paragraph below for more info)
+        # Default: '.'
+        add: '.'
+
+        # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
+        # Default: '.'
+        cwd: '.'
+
+        # Determines the way the action fills missing author name and email. Three options are available:
+        # - github_actor -> UserName <UserName@users.noreply.github.com>
+        # - user_info -> Your Display Name <your-actual@email.com>
+        # - github_actions -> github-actions <email associated with the github logo>
+        # Default:
+        default_author: github_actor
+
+        # The message for the commit
+        # Default: 'Commit from GitHub Actions (name of the workflow)'
+        message: 'Your commit message'
+        
