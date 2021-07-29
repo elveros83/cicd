@@ -17,7 +17,7 @@ jobs:
       run: echo "Run image test!"
 
     - name: login
-      run: docker login -u $GITHUB_ACTOR -p $PASSWORD
+      run: docker login -u $GITHUB_ACTOR -p "$PASSWORD"
       env:
         PASSWORD: ${{ secrets.PASSWORD }}
 
