@@ -32,4 +32,4 @@ jobs:
       id: setcontext
 
     - name: deploy
-      run: kubectl set image deployment predict app=$GITHUB_ACTOR/app:$GITHUB_RUN_NUMBER
+      run: kubectl set image deployment mynginx mynginx=$GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
