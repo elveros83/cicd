@@ -19,4 +19,16 @@ spec:
     spec:
       containers:
       - name: mynginx
-        image: nginx:1.7.9
+        image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
