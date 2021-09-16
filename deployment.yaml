@@ -26,6 +26,7 @@ kind: Service
 metadata:
   name: mynginx
 spec:
+  type: LoadBalancer
   selector:
     app: nginx
   ports:
