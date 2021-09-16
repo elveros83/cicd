@@ -20,7 +20,7 @@
 
 ### deployment.yaml
 
-배포하는 Kubernetes manifest 파일입니다. 예시에서는 `Deployment`를 이용하여 nginx를 배포합니다.
+배포하는 Kubernetes manifest 파일입니다. 예시에서는 `Deployment`와 `Service`를 이용하여 nginx를 배포합니다.
 
 
 ### .github/workflows/main.yaml
