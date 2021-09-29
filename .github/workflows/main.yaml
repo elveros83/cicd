@@ -1,4 +1,3 @@
-# .github/workflows/main.yml
 name: kubernetes CI/CD
 on: push
 
@@ -23,13 +22,3 @@ jobs:
 
     - name: push
       run: docker push $GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
-
-    - name: set KUBECONFIG
-      uses: azure/k8s-set-context@v1
-      with:
-        method: kubeconfig
-        kubeconfig: ${{ secrets.KUBECONFIG }}
-      id: setcontext
-
-    - name: deploy
-      run: kubectl set image deployment mynginx mynginx=$GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
