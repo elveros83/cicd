@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: mynginx
-        image: nginx
+        image: pepsicolav13/nginx:23
 ---
 apiVersion: v1
 kind: Service
