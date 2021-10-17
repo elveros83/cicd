@@ -10,7 +10,9 @@ jobs:
       uses: actions/checkout@main
 
     - name: Build the Docker image
-      run: docker build . -t $GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
+      run: docker build . -t $USER/nginx:$GITHUB_RUN_NUMBER
+      env:
+        USER: ${{ secrets.DOCKER_USER }}
 
     - name: Test image
       run: echo "Run image test!"
