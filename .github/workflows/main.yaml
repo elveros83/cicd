@@ -16,9 +16,10 @@ jobs:
       run: echo "Run image test!"
 
     - name: login
-      run: docker login -u $GITHUB_ACTOR -p $PASSWORD
+      run: docker login -u $USER -p $PASSWORD
       env:
-        PASSWORD: ${{ secrets.PASSWORD }}
+        -USER: ${{ secrets.DOCKER_USER }}
+        -PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: push
       run: docker push $GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
