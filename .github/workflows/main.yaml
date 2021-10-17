@@ -22,4 +22,6 @@ jobs:
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: push
-      run: docker push $GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
+      run: docker push $USER/nginx:$GITHUB_RUN_NUMBER
+      env:
+        USER: ${{ secrets.DOCKER_USER }}
