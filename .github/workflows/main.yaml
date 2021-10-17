@@ -13,7 +13,7 @@ jobs:
       run: docker build . -t $GITHUB_ACTOR/nginx:$GITHUB_RUN_NUMBER
 
     - name: Test image
-      run: echo "Run image test!!"
+      run: echo "Run image test!"
 
     - name: login
       run: docker login -u $GITHUB_ACTOR -p $PASSWORD
